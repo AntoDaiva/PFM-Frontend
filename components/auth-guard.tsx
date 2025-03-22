@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useRouter, usePathname } from "next/navigation"
-import API_BASE_URL from "../config"
+const API_BASE_URL: string = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
 
 const publicPaths = ["/login", "/register"]
 
@@ -23,7 +23,7 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
 
       if (accessToken && !publicPaths.includes(pathname)) {
         try {
-          const response = await fetch("http://localhost:5000/api/auth/verify", {
+          const response = await fetch(`${API_BASE_URL}/api/auth/verify`, {
             headers: {
               Authorization: `Bearer ${accessToken}`,
             },

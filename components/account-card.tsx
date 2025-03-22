@@ -16,7 +16,7 @@ export default function AccountCard() {
             />
           </div>
           <div>
-            <h2 className="text-xl font-bold text-gray-800">Halo, Soebagdja</h2>
+            <h2 className="text-xl font-bold text-gray-800">Halo, Daiva</h2>
             <div className="flex items-center text-gray-500">
               <span>Nasabah Biasa</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
