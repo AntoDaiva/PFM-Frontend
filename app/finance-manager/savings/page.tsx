@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { ArrowLeft, Plus } from "lucide-react"
 import Link from "next/link"
 import SavingsPocket from "@/components/savings-pocket"
-import API_BASE_URL from "../../../config"
+const API_BASE_URL: string = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
 
 interface SavingsGoal {
   _id: string
