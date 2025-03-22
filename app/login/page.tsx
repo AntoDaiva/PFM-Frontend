@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Eye, EyeOff, Fingerprint } from "lucide-react"
 import StatusBar from "@/components/status-bar"
+const API_BASE_URL: string = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000" ;
 
 export default function LoginPage() {
   const router = useRouter()
@@ -22,7 +23,7 @@ export default function LoginPage() {
       
       if (accessToken) {
         try {
-          const response = await fetch("http://localhost:5000/api/auth/verify", {
+          const response = await fetch(`${API_BASE_URL}/api/auth/verify`, {
             headers: {
               Authorization: `Bearer ${accessToken}`,
             },
@@ -61,7 +62,7 @@ export default function LoginPage() {
     setIsLoading(true)
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

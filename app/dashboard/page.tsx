@@ -6,6 +6,7 @@ import AccountCard from "@/components/account-card"
 import FeatureSection from "@/components/feature-section"
 import BottomNavigation from "@/components/bottom-navigation"
 import PromoBanner from "@/components/promo-banner"
+const API_BASE_URL: string = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
 
 export default function Dashboard() {
   const router = useRouter()
@@ -14,7 +15,7 @@ export default function Dashboard() {
     try {
       // Call the logout endpoint
       const accessToken = localStorage.getItem("accessToken") || sessionStorage.getItem("accessToken")
-      await fetch("http://localhost:5000/api/auth/logout", {
+      await fetch(`${API_BASE_URL}/api/auth/logout`, {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${accessToken}`,

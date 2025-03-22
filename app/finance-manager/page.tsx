@@ -10,6 +10,7 @@ import RecapBanner from "@/components/recap-banner"
 import AddExpenseButton from "@/components/add-expense-button"
 import AnalysisButton from "@/components/analysis-button"
 import MonthSelector from "@/components/month-selector"
+const API_BASE_URL: string = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
 
 interface Expense {
   _id: string
@@ -61,7 +62,7 @@ export default function FinanceManagerPage() {
         }
 
         // Fetch expenses
-        const expensesResponse = await fetch("http://localhost:5000/api/finance/expenses", {
+        const expensesResponse = await fetch(`${API_BASE_URL}/api/finance/expenses`, {
           headers
         })
         const expensesData = await expensesResponse.json()
@@ -71,7 +72,7 @@ export default function FinanceManagerPage() {
         }
 
         // Fetch savings goals
-        const savingsResponse = await fetch("http://localhost:5000/api/finance/savings", {
+        const savingsResponse = await fetch(`${API_BASE_URL}/api/finance/savings`, {
           headers
         })
         const savingsData = await savingsResponse.json()
@@ -80,7 +81,7 @@ export default function FinanceManagerPage() {
         }
 
         // Fetch expense categories
-        const categoriesResponse = await fetch("http://localhost:5000/api/finance/expense-categories", {
+        const categoriesResponse = await fetch(`${API_BASE_URL}/api/finance/expense-categories`, {
           headers
         })
         const categoriesData = await categoriesResponse.json()

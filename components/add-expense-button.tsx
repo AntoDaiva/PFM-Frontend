@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import { Plus, X } from "lucide-react"
+const API_BASE_URL: string = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
 
 interface ExpenseCategory {
   _id: string
@@ -39,7 +40,7 @@ export default function AddExpenseButton() {
         return
       }
 
-      const response = await fetch("http://localhost:5000/api/finance/expense-categories", {
+      const response = await fetch(`${API_BASE_URL}/api/finance/expense-categories`, {
         headers: {
           "Authorization": `Bearer ${accessToken}`,
           "Content-Type": "application/json"

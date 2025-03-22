@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { ArrowLeft, Plus } from "lucide-react"
 import Link from "next/link"
 import SavingsPocket from "@/components/savings-pocket"
+import API_BASE_URL from "../../../config"
 
 interface SavingsGoal {
   _id: string
@@ -28,7 +29,7 @@ export default function SavingsPage() {
           return
         }
 
-        const response = await fetch("http://localhost:5000/api/finance/savings", {
+        const response = await fetch(`${API_BASE_URL}/api/finance/savings`, {
           headers: {
             "Authorization": `Bearer ${accessToken}`,
             "Content-Type": "application/json"

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useRouter, usePathname } from "next/navigation"
+import API_BASE_URL from "../config"
 
 const publicPaths = ["/login", "/register"]
 

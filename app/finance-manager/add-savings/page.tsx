@@ -5,6 +5,7 @@ import { useState } from "react"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+const API_BASE_URL: string = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
 
 export default function AddSavingsPage() {
   const router = useRouter()
@@ -29,7 +30,7 @@ export default function AddSavingsPage() {
         return
       }
 
-      const response = await fetch("http://localhost:5000/api/finance/savings", {
+      const response = await fetch(`${API_BASE_URL}/api/finance/savings`, {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${accessToken}`,

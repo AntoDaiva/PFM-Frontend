@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { ArrowLeft, Search } from "lucide-react"
 import Link from "next/link"
 import ExpenseItem from "@/components/expense-item"
+const API_BASE_URL: string = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
 
 interface ExpenseCategory {
   _id: string
@@ -46,7 +47,7 @@ export default function ExpensesPage() {
         }
 
         // Fetch categories
-        const categoryResponse = await fetch("http://localhost:5000/api/finance/expense-categories", {
+        const categoryResponse = await fetch(`${API_BASE_URL}/api/finance/expense-categories`, {
           headers
         })
         if (!categoryResponse.ok) throw new Error("Failed to fetch categories")
@@ -54,7 +55,7 @@ export default function ExpensesPage() {
         setExpenseCategories(categoryData.data.categories)
 
         // Fetch expenses
-        const expenseResponse = await fetch("http://localhost:5000/api/finance/expenses", {
+        const expenseResponse = await fetch(`${API_BASE_URL}/api/finance/expenses`, {
           headers
         })
         if (!expenseResponse.ok) throw new Error("Failed to fetch expenses")
