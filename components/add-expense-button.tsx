@@ -86,7 +86,7 @@ export default function AddExpenseButton() {
         date: formattedDate
       }
 
-      const response = await fetch("http://localhost:5000/api/finance/expenses", {
+      const response = await fetch(`${API_BASE_URL}/api/finance/expenses`, {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${accessToken}`,
