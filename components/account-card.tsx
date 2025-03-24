@@ -8,7 +8,7 @@ export default function AccountCard() {
         <div className="flex items-center gap-3">
           <div className="w-12 h-12 bg-blue-100 rounded-full overflow-hidden">
             <Image
-              src="/placeholder.svg?height=48&width=48"
+              src="/profile.png"
               alt="Profile picture"
               width={48}
               height={48}
@@ -65,7 +65,7 @@ export default function AccountCard() {
           </div>
           <div className="w-24 h-16 relative">
             <Image
-              src="/placeholder.svg?height=64&width=96"
+              src="/credit card.png"
               alt="Credit card"
               width={96}
               height={64}
