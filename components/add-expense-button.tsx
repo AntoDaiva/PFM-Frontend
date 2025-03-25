@@ -136,7 +136,7 @@ export default function AddExpenseButton() {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-lg w-full max-w-md">
             <div className="flex justify-between items-center p-4 border-b">
-              <h3 className="text-lg font-bold">Add New Expense</h3>
+              <h3 className="text-lg font-bold">Tambah Pengeluaran</h3>
               <button onClick={() => setIsModalOpen(false)} className="text-gray-500 hover:text-gray-700">
                 <X size={20} />
               </button>
@@ -156,7 +156,7 @@ export default function AddExpenseButton() {
               )}
 
               <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Amount (Rp)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Jumlah (Rp)</label>
                 <input
                   type="number"
                   value={amount}
@@ -174,19 +174,19 @@ export default function AddExpenseButton() {
                   value={merchant}
                   onChange={(e) => setMerchant(e.target.value)}
                   className="w-full p-2 border border-gray-300 rounded-md"
-                  placeholder="Where did you spend?"
+                  placeholder="Di mana kamu keluarin uang?"
                   required
                 />
               </div>
 
               <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Description (Optional)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Deskripsi (Optional)</label>
                 <input
                   type="text"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   className="w-full p-2 border border-gray-300 rounded-md"
-                  placeholder="What did you purchase?"
+                  placeholder="Apa yang kamu beli?"
                 />
               </div>
 
@@ -217,14 +217,14 @@ export default function AddExpenseButton() {
                   className="px-4 py-2 border border-gray-300 rounded-md text-gray-700"
                   disabled={isLoading}
                 >
-                  Cancel
+                  Batal
                 </button>
                 <button 
                   type="submit" 
                   className="px-4 py-2 bg-blue-500 text-white rounded-md disabled:bg-blue-300"
                   disabled={isLoading}
                 >
-                  {isLoading ? "Saving..." : "Save Expense"}
+                  {isLoading ? "Saving..." : "Tambah Pengeluaran"}
                 </button>
               </div>
             </form>

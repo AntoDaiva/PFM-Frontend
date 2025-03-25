@@ -19,10 +19,10 @@ export default function RecapBanner() {
           <span className="text-2xl">🎉</span>
         </div>
         <div className="ml-3">
-          <p className="text-sm text-yellow-700">Your yearly financial recap is ready!</p>
+          <p className="text-sm text-yellow-700">Rekap Finansial Tahunanmu udah ada nih!</p>
           <div className="mt-1">
             <Link href="/finance-manager/yearly-recap">
-              <button className="text-xs font-medium text-yellow-800 underline">View Now</button>
+              <button className="text-xs font-medium text-yellow-800 underline">Lihat Sekarang</button>
             </Link>
           </div>
         </div>

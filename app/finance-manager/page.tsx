@@ -145,7 +145,7 @@ export default function FinanceManagerPage() {
           <Link href="/" className="p-2">
             <ArrowLeft size={24} />
           </Link>
-          <h1 className="text-xl font-bold">Financial Manager</h1>
+          <h1 className="text-xl font-bold">Manajer Keuangan</h1>
           <div className="w-8"></div>
         </div>
       </div>
@@ -158,7 +158,7 @@ export default function FinanceManagerPage() {
         <Link href="/finance-manager/budget-settings">
           <button className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm">
             <Settings size={18} />
-            <span>Budget Settings</span>
+            <span>Pengaturan Anggaran</span>
           </button>
         </Link>
         <MonthSelector />
@@ -166,13 +166,13 @@ export default function FinanceManagerPage() {
 
       {/* Main Financial Overview */}
       <div className="bg-white rounded-lg shadow-sm mx-4 p-4 mb-4">
-        <h2 className="text-lg font-bold mb-2">Expense Overview</h2>
+        <h2 className="text-lg font-bold mb-2">Gambaran Pengeluaran</h2>
         <div className="h-64">
           <ExpenseChart data={expenseData} />
         </div>
         <div className="mt-4">
           <div className="flex justify-between items-center">
-            <h3 className="text-lg font-semibold">Monthly Budget</h3>
+            <h3 className="text-lg font-semibold">Anggaran Bulanan</h3>
             <span className="text-sm text-gray-500">
               Rp {(totalExpenses / 1000000).toFixed(1)} jt / Rp {(totalBudget / 1000000).toFixed(1)} jt
             </span>
@@ -189,9 +189,9 @@ export default function FinanceManagerPage() {
       {/* Savings Section */}
       <div className="bg-white rounded-lg shadow-sm mx-4 p-4 mb-4">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg font-bold">Savings Goals</h2>
+          <h2 className="text-lg font-bold">Target Tabungan</h2>
           <Link href="/finance-manager/savings">
-            <button className="text-blue-500 font-medium">View All</button>
+            <button className="text-blue-500 font-medium">Lihat Semua</button>
           </Link>
         </div>
         <div className="space-y-4">
@@ -211,7 +211,7 @@ export default function FinanceManagerPage() {
           <Link href="/finance-manager/add-savings">
             <button className="w-full flex items-center justify-center gap-2 py-3 border-2 border-dashed border-gray-300 rounded-lg text-gray-500">
               <Plus size={18} />
-              <span>Add New Saving Goal</span>
+              <span>Tambah Tujuan Tabungan</span>
             </button>
           </Link>
         </div>
@@ -220,9 +220,9 @@ export default function FinanceManagerPage() {
       {/* Expense List */}
       <div className="bg-white rounded-lg shadow-sm mx-4 p-4">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg font-bold">Recent Expenses</h2>
+          <h2 className="text-lg font-bold">Riwayat Pengeluaran</h2>
           <Link href="/finance-manager/expenses">
-            <button className="text-blue-500 font-medium">View All</button>
+            <button className="text-blue-500 font-medium">Lihat Semua</button>
           </Link>
         </div>
         <div className="space-y-3">

@@ -16,10 +16,10 @@ export default function BudgetSettingsPage() {
 
   // Budget profiles
   const budgetProfiles = [
-    { id: "frugal", name: "Frugal Living", description: "Minimize expenses, maximize savings" },
-    { id: "investor", name: "The Investor", description: "Focus on growing investments" },
-    { id: "traveler", name: "The Traveler", description: "Save for experiences and trips" },
-    { id: "fashionista", name: "The Fashionista", description: "Prioritize shopping and style" },
+    { id: "frugal", name: "Frugal Living", description: "Pengeluaran minimum, tabungan maksimum" },
+    { id: "investor", name: "The Investor", description: "Fokus pada perkembangan investasi" },
+    { id: "traveler", name: "The Traveler", description: "Nabung untuk pengalaman dan perjalanan" },
+    { id: "fashionista", name: "The Fashionista", description: "Prioritas belanja dan fashion" },
   ]
 
   const [categories, setCategories] = useState(initialCategories)
@@ -40,7 +40,7 @@ export default function BudgetSettingsPage() {
   }
 
   const handleSave = () => {
-    alert("Budget settings saved successfully!")
+    alert("Pengaturan anggaran berhasil ditambah!")
   }
 
   const handleSelectProfile = (profileId: string) => {
@@ -48,7 +48,7 @@ export default function BudgetSettingsPage() {
 
     // In a real app, this would adjust the budget allocations based on the profile
     // For this demo, we'll just show an alert
-    alert(`${profileId} profile selected! Budget allocations would be adjusted accordingly.`)
+    alert(`${profileId} profile terpilih! Alokasi anggaran akan menyesuaikan.`)
   }
 
   return (
@@ -59,7 +59,7 @@ export default function BudgetSettingsPage() {
           <Link href="/finance-manager" className="p-2">
             <ArrowLeft size={24} />
           </Link>
-          <h1 className="text-xl font-bold">Budget Settings</h1>
+          <h1 className="text-xl font-bold">Pengaturan Anggaran</h1>
           <button className="p-2 text-white" onClick={handleSave}>
             <Save size={24} />
           </button>
@@ -90,7 +90,7 @@ export default function BudgetSettingsPage() {
       {activeTab === "custom" && (
         <div className="p-4">
           <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
-            <h2 className="text-lg font-bold mb-4">Monthly Budget Allocation</h2>
+            <h2 className="text-lg font-bold mb-4">Alokasi Anggaran Bulanan</h2>
 
             <div className="space-y-4">
               {categories.map((category) => (
@@ -114,20 +114,20 @@ export default function BudgetSettingsPage() {
 
             <button className="w-full flex items-center justify-center gap-2 py-3 mt-4 border-2 border-dashed border-gray-300 rounded-lg text-gray-500">
               <Plus size={18} />
-              <span>Add New Category</span>
+              <span>Tambah Kategori Baru</span>
             </button>
           </div>
 
           <div className="bg-white rounded-lg shadow-sm p-4">
-            <h2 className="text-lg font-bold mb-2">Total Monthly Budget</h2>
+            <h2 className="text-lg font-bold mb-2">Jumlah Anggaran Bulanan</h2>
             <div className="text-2xl font-bold text-blue-600">
               {formatCurrency(categories.reduce((sum, cat) => sum + cat.budget, 0))}
             </div>
 
             <div className="mt-4 p-3 bg-blue-50 rounded-lg">
-              <h3 className="font-medium mb-1">Budget Tip</h3>
+              <h3 className="font-medium mb-1">Tips Anggaran</h3>
               <p className="text-sm text-gray-700">
-                A good rule of thumb is to allocate 50% for needs, 30% for wants, and 20% for savings.
+                Aturan praktis yang baik adalah mengalokasikan 50% untuk kebutuhan, 30% untuk keinginan, dan 20% untuk tabungan.
               </p>
             </div>
           </div>
@@ -138,9 +138,9 @@ export default function BudgetSettingsPage() {
       {activeTab === "profile" && (
         <div className="p-4">
           <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
-            <h2 className="text-lg font-bold mb-4">Select a Budget Profile</h2>
+            <h2 className="text-lg font-bold mb-4">Pilih Profil Anggaran</h2>
             <p className="text-sm text-gray-600 mb-4">
-              Choose a pre-defined budget profile that matches your lifestyle and financial goals.
+              Pilih profil anggaran yang sudah ditentukan sesuai dengan gaya hidup dan tujuan keuangan Anda!
             </p>
 
             <div className="space-y-3">
@@ -162,16 +162,15 @@ export default function BudgetSettingsPage() {
           </div>
 
           <div className="bg-white rounded-lg shadow-sm p-4">
-            <h2 className="text-lg font-bold mb-2">How It Works</h2>
+            <h2 className="text-lg font-bold mb-2">Bagaimana Cara Kerjanya?</h2>
             <p className="text-sm text-gray-600">
-              When you select a budget profile, we'll automatically adjust your category allocations based on the
-              profile's recommended percentages. You can still make manual adjustments after applying a profile.
+            Saat Anda memilih profil anggaran, kami akan secara otomatis menyesuaikan alokasi kategori berdasarkan persentase yang disarankan dalam profil.
+            Anda tetap dapat melakukan penyesuaian secara manual setelah menerapkan profil.
             </p>
 
             <div className="mt-4 p-3 bg-yellow-50 border border-yellow-100 rounded-lg">
               <p className="text-sm text-yellow-800">
-                <span className="font-medium">Note:</span> Changing your budget profile will override your current
-                custom budget settings.
+                <span className="font-medium">Cacatan:</span> Mengubah profil anggaran Anda akan menimpa pengaturan anggaran kustom saat ini.
               </p>
             </div>
           </div>

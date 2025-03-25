@@ -76,7 +76,7 @@ export default function SavingsPage() {
             <Link href="/finance-manager" className="p-2">
               <ArrowLeft size={24} />
             </Link>
-            <h1 className="text-xl font-bold">Savings Goals</h1>
+            <h1 className="text-xl font-bold">Target Tabungan</h1>
             <div className="w-8"></div>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function SavingsPage() {
             <Link href="/finance-manager" className="p-2">
               <ArrowLeft size={24} />
             </Link>
-            <h1 className="text-xl font-bold">Savings Goals</h1>
+            <h1 className="text-xl font-bold">Target Tabungan</h1>
             <div className="w-8"></div>
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function SavingsPage() {
           <Link href="/finance-manager" className="p-2">
             <ArrowLeft size={24} />
           </Link>
-          <h1 className="text-xl font-bold">Savings Goals</h1>
+          <h1 className="text-xl font-bold">Target Tabungan</h1>
           <div className="w-8"></div>
         </div>
       </div>
@@ -122,10 +122,10 @@ export default function SavingsPage() {
       {/* Summary Card */}
       <div className="p-4">
         <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
-          <h2 className="text-lg font-bold mb-2">Savings Summary</h2>
+          <h2 className="text-lg font-bold mb-2">Ringkasan Tabungan</h2>
 
           <div className="flex justify-between items-center mb-2">
-            <span className="text-gray-600">Total Saved:</span>
+            <span className="text-gray-600">Total Tabungan:</span>
             <span className="font-bold text-green-600">{formatCurrency(totalSavings)}</span>
           </div>
 
@@ -140,14 +140,14 @@ export default function SavingsPage() {
 
           <div className="p-3 bg-blue-50 rounded-lg">
             <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-700">Monthly Auto-Debit:</span>
+              <span className="text-sm text-gray-700">Auto-Debit Bulanan:</span>
               <span className="font-medium">{formatCurrency(monthlyAutoDebit)}</span>
             </div>
           </div>
         </div>
 
         {/* Savings Pockets */}
-        <h2 className="text-lg font-bold mb-2">Your Savings Goals</h2>
+        <h2 className="text-lg font-bold mb-2">Target Tabungan Kamu</h2>
         <div className="space-y-4 mb-4">
           {savingsGoals.map((pocket) => (
             <SavingsPocket 
@@ -167,7 +167,7 @@ export default function SavingsPage() {
         <Link href="/finance-manager/add-savings">
           <button className="w-full flex items-center justify-center gap-2 py-3 bg-blue-500 text-white rounded-lg">
             <Plus size={18} />
-            <span>Add New Saving Goal</span>
+            <span>Buat Target Baru</span>
           </button>
         </Link>
       </div>

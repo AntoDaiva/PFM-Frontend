@@ -117,7 +117,7 @@ export default function LoginPage() {
 
       {/* Login Form */}
       <div className="flex-1 bg-white rounded-t-3xl px-6 pt-8 pb-6 flex flex-col">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">Login to Your Account</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-6">Masuk ke Akun Anda</h2>
 
         {error && (
           <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">{error}</div>
@@ -134,7 +134,7 @@ export default function LoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Enter your email"
+              placeholder="Masukkan email"
             />
           </div>
 
@@ -149,7 +149,7 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Enter your password"
+                placeholder="Masukkan password"
               />
               <button
                 type="button"
@@ -169,7 +169,7 @@ export default function LoginPage() {
                 onChange={() => setRememberMe(!rememberMe)}
                 className="w-4 h-4 text-blue-600 rounded"
               />
-              <span className="ml-2 text-sm text-gray-600">Remember me</span>
+              <span className="ml-2 text-sm text-gray-600">Ingat Saya</span>
             </label>
 
             <button type="button" className="text-sm text-blue-600 font-medium">
@@ -199,13 +199,13 @@ export default function LoginPage() {
             className="w-full py-3 border border-gray-300 rounded-lg font-medium text-gray-700 flex items-center justify-center gap-2"
           >
             <Fingerprint size={20} />
-            <span>Login with Biometric</span>
+            <span>Masuk dengan Biometrik</span>
           </button>
         </form>
 
         <div className="mt-auto pt-6 text-center">
           <p className="text-sm text-gray-600">
-            Don't have an account? <button className="text-blue-600 font-medium">Register</button>
+            Belum punya akun? <button className="text-blue-600 font-medium">Daftar</button>
           </p>
         </div>
       </div>

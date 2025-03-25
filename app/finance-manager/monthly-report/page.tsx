@@ -49,7 +49,7 @@ export default function MonthlyReportPage() {
           <Link href="/finance-manager" className="p-2">
             <ArrowLeft size={24} />
           </Link>
-          <h1 className="text-xl font-bold">March 2025 Report</h1>
+          <h1 className="text-xl font-bold">Laporan Maret 2025</h1>
           <button className="p-2">
             <Download size={24} />
           </button>
@@ -59,7 +59,7 @@ export default function MonthlyReportPage() {
       {/* Expense Overview */}
       <div className="p-4">
         <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
-          <h2 className="text-lg font-bold mb-2">Expense Overview</h2>
+          <h2 className="text-lg font-bold mb-2">Ringkasan Pengeluaran</h2>
           <div className="h-64">
             <ExpenseChart data={expenseData} />
           </div>
@@ -67,7 +67,7 @@ export default function MonthlyReportPage() {
 
         {/* Budget Performance */}
         <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
-          <h2 className="text-lg font-bold mb-2">Budget Performance</h2>
+          <h2 className="text-lg font-bold mb-2">Kinerja Anggaran</h2>
 
           <div className="space-y-4">
             {categoryStatus.map((category, index) => (
@@ -108,7 +108,7 @@ export default function MonthlyReportPage() {
 
         {/* Monthly Comparison */}
         <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
-          <h2 className="text-lg font-bold mb-2">Monthly Comparison</h2>
+          <h2 className="text-lg font-bold mb-2">Perbandingan Bulanan</h2>
 
           <div className="space-y-3">
             {monthlyComparison.map((month, index) => (
@@ -131,9 +131,9 @@ export default function MonthlyReportPage() {
 
           <div className="mt-4 p-3 bg-blue-50 rounded-lg">
             <p className="text-sm">
-              Your spending in March increased by
+              Pengeluaran Anda di bulan Maret meningkat sebesar
               <span className="font-medium"> 11.3% </span>
-              compared to February.
+              dibandingkan dengan Februari.
             </p>
           </div>
         </div>
@@ -148,9 +148,9 @@ export default function MonthlyReportPage() {
                 ⚠️
               </div>
               <div>
-                <h3 className="font-medium">Shopping Expenses</h3>
+                <h3 className="font-medium">Pengeluaran Belanja</h3>
                 <p className="text-sm text-gray-600">
-                  Your shopping expenses are 80% over budget this month. Consider reviewing your purchases.
+                Pengeluaran belanja Anda bulan ini melebihi anggaran sebesar 80%. Pertimbangkan untuk meninjau kembali pembelian Anda.
                 </p>
               </div>
             </div>
@@ -160,9 +160,9 @@ export default function MonthlyReportPage() {
                 ✅
               </div>
               <div>
-                <h3 className="font-medium">Bills Management</h3>
+                <h3 className="font-medium">Pengelolaan Tagihan</h3>
                 <p className="text-sm text-gray-600">
-                  You've kept your bills 20% under budget. Great job managing your fixed expenses!
+                Tagihan kamu bulan ini 20% di bawah anggaran. Keren! Kamu berhasil mengelola pengeluaran tetap dengan baik!
                 </p>
               </div>
             </div>
@@ -172,9 +172,9 @@ export default function MonthlyReportPage() {
                 💡
               </div>
               <div>
-                <h3 className="font-medium">Recommendation</h3>
+                <h3 className="font-medium">Rekomendasi</h3>
                 <p className="text-sm text-gray-600">
-                  Consider setting up spending alerts for categories that frequently go over budget.
+                  Coba atur peringatan pengeluaran untuk kategori yang sering melebihi anggaran.
                 </p>
               </div>
             </div>

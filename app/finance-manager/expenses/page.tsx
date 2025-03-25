@@ -123,7 +123,7 @@ export default function ExpensesPage() {
           <Link href="/finance-manager" className="p-2">
             <ArrowLeft size={24} />
           </Link>
-          <h1 className="text-xl font-bold">All Expenses</h1>
+          <h1 className="text-xl font-bold">Semua Pengeluaran</h1>
           <div className="w-8"></div> {/* Empty div for spacing */}
         </div>
       </div>
@@ -186,7 +186,7 @@ export default function ExpensesPage() {
           ))
         ) : (
           <div className="text-center py-8">
-            <p className="text-gray-500">No expenses found</p>
+            <p className="text-gray-500">Wah, kamu belum ada pengeluaran</p>
           </div>
         )}
       </div>

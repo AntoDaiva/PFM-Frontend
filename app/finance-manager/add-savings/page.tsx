@@ -66,7 +66,7 @@ export default function AddSavingsPage() {
           <Link href="/finance-manager/savings" className="p-2">
             <ArrowLeft size={24} />
           </Link>
-          <h1 className="text-xl font-bold">Add Savings Goal</h1>
+          <h1 className="text-xl font-bold">Tambah Target Tabungan</h1>
           <div className="w-8"></div>
         </div>
       </div>
@@ -80,7 +80,7 @@ export default function AddSavingsPage() {
 
         <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-1">Goal Name</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Nama Target</label>
             <input
               type="text"
               value={name}
@@ -92,7 +92,7 @@ export default function AddSavingsPage() {
           </div>
 
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-1">Target Amount (Rp)</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Jumlah Target (Rp)</label>
             <input
               type="number"
               value={target}
@@ -104,7 +104,7 @@ export default function AddSavingsPage() {
           </div>
 
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-1">Auto-Debit Amount (Rp/month)</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Jumlah Auto-Debit (Rp/month)</label>
             <input
               type="number"
               value={autoDebit}
@@ -114,7 +114,7 @@ export default function AddSavingsPage() {
               required
             />
             <p className="text-xs text-gray-500 mt-1">
-              This amount will be automatically transferred to your savings goal each month.
+              Sejumlah ini akan otomatis ditransfer ke target tabungan setiap bulan.
             </p>
           </div>
 
@@ -143,9 +143,9 @@ export default function AddSavingsPage() {
               {icon}
             </div>
             <div>
-              <h3 className="font-medium">{name || "Your Savings Goal"}</h3>
+              <h3 className="font-medium">{name || "Target Tabungan Kamu"}</h3>
               <p className="text-sm text-gray-600">
-                {target ? `Target: Rp ${Number.parseInt(target).toLocaleString("id-ID")}` : "Set your target amount"}
+                {target ? `Target: Rp ${Number.parseInt(target).toLocaleString("id-ID")}` : "Tentukan jumlah target"}
               </p>
             </div>
           </div>
@@ -153,11 +153,10 @@ export default function AddSavingsPage() {
           {target && autoDebit && (
             <div className="p-3 bg-blue-50 rounded-lg">
               <p className="text-sm">
-                With an auto-debit of Rp {Number.parseInt(autoDebit).toLocaleString("id-ID")} per month, you'll reach
-                your goal in approximately
+                Dengan auto-debit sejumlah Rp {Number.parseInt(autoDebit).toLocaleString("id-ID")} per bulan, kamu akan capai targetmu dalam sekitar
                 <span className="font-medium">
                   {" "}
-                  {Math.ceil(Number.parseInt(target) / Number.parseInt(autoDebit))} months
+                  {Math.ceil(Number.parseInt(target) / Number.parseInt(autoDebit))} bulan
                 </span>
                 .
               </p>
@@ -170,7 +169,7 @@ export default function AddSavingsPage() {
           className="w-full py-3 bg-blue-500 text-white rounded-lg font-medium disabled:opacity-50"
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Creating..." : "Create Savings Goal"}
+          {isSubmitting ? "Creating..." : "Buat Target Tabungan"}
         </button>
       </form>
     </main>

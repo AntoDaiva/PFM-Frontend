@@ -46,20 +46,20 @@ export default function AnalysisButton({ expenseData }: AnalysisButtonProps) {
 
     const budgetStatus =
       totalSpent <= totalBudget
-        ? `You're within your monthly budget! You've spent ${formatCurrency(totalSpent)} out of ${formatCurrency(totalBudget)}.`
+        ? `Masih masuk nih! Kamu baru keluarin  ${formatCurrency(totalSpent)} dari anggaran ${formatCurrency(totalBudget)}.`
         : `You've exceeded your monthly budget by ${formatCurrency(totalSpent - totalBudget)}.`
 
     const categoryAnalysis =
       overBudgetCategories.length > 0
-        ? `You've overspent in ${overBudgetCategories.length} categories, most notably in ${overBudgetCategories[0].name} (${formatCurrency(overBudgetCategories[0].value - overBudgetCategories[0].budget)} over budget).`
+        ? `Dari pengeluaranmu, kamu terlalu boros di ${overBudgetCategories.length} kategori, paling boncos di ${overBudgetCategories[0].name} (bablas ${formatCurrency(overBudgetCategories[0].value - overBudgetCategories[0].budget)} nih!).`
         : `Great job! You've stayed within budget for all spending categories.`
 
     const recommendation =
       overBudgetCategories.length > 0
-        ? `Consider reducing your ${overBudgetCategories[0].name} expenses next month or adjusting your budget allocation.`
+        ? `Coba deh kurangin dulu nongki dan nontonnnya bulan depan. Atau sesuaikan lagi anggarannya.`
         : `You could consider increasing your savings rate since you're managing your budget well.`
 
-    const pattern = `Your largest expense category is ${biggestCategory.name}, representing ${Math.round((biggestCategory.value / totalSpent) * 100)}% of your total spending.`
+    const pattern = `Kategori pengeluaran utamamu ${biggestCategory.name}, mewakili ${Math.round((biggestCategory.value / totalSpent) * 100)}% total pengeluaran.`
 
     return {
       budgetStatus,
@@ -77,7 +77,7 @@ export default function AnalysisButton({ expenseData }: AnalysisButtonProps) {
         className="bg-white px-4 py-3 rounded-full shadow-lg flex items-center gap-2"
         onClick={() => setIsModalOpen(true)}
       >
-        <span className="text-sm font-medium">AI Analysis</span>
+        <span className="text-sm font-medium">Analisis AI</span>
         <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
           <span className="text-white text-xs">AI</span>
         </div>
@@ -89,7 +89,7 @@ export default function AnalysisButton({ expenseData }: AnalysisButtonProps) {
           <div className="bg-white rounded-lg w-full max-w-md max-h-[80vh] overflow-y-auto">
             <div className="flex justify-between items-center p-4 border-b">
               <div className="flex items-center gap-2">
-                <h3 className="text-lg font-bold">AI Financial Analysis</h3>
+                <h3 className="text-lg font-bold">AI Analisis Finansial</h3>
                 <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
                   <span className="text-white text-xs">AI</span>
                 </div>
@@ -101,38 +101,37 @@ export default function AnalysisButton({ expenseData }: AnalysisButtonProps) {
 
             <div className="p-4">
               <div className="mb-4">
-                <h4 className="font-medium text-gray-700 mb-2">Budget Status</h4>
+                <h4 className="font-medium text-gray-700 mb-2">Kondisi Budget</h4>
                 <p className="text-sm">{analysis.budgetStatus}</p>
               </div>
 
               <div className="mb-4">
-                <h4 className="font-medium text-gray-700 mb-2">Category Analysis</h4>
+                <h4 className="font-medium text-gray-700 mb-2">Kategori pengeluaranmu</h4>
                 <p className="text-sm">{analysis.categoryAnalysis}</p>
               </div>
 
               <div className="mb-4">
-                <h4 className="font-medium text-gray-700 mb-2">Spending Pattern</h4>
+                <h4 className="font-medium text-gray-700 mb-2">Gimana duit pergi meninggalkanmu</h4>
                 <p className="text-sm">{analysis.pattern}</p>
               </div>
 
               <div className="mb-4">
-                <h4 className="font-medium text-gray-700 mb-2">Recommendation</h4>
+                <h4 className="font-medium text-gray-700 mb-2">Rekomendasi</h4>
                 <p className="text-sm">{analysis.recommendation}</p>
               </div>
 
               <div className="mt-6 p-3 bg-blue-50 rounded-lg border border-blue-100">
-                <h4 className="font-medium text-blue-800 mb-2">Personalized Tip</h4>
+                <h4 className="font-medium text-blue-800 mb-2">Tips Buat Kamu</h4>
                 <p className="text-sm text-blue-700">
-                  Based on your spending patterns, you might benefit from our "Automated Savings Plan" feature. It can
-                  help you save more consistently by automatically transferring small amounts to your savings goals
-                  based on your spending habits.
+                  Dari pola pengeluaranmu, kamu harus cobain fitur "Automated Savings Plan".
+                  Fitur ini bisa otomatis sisihin duit ke target tabunganmu dengan memantau pola pengeluaranmu
                 </p>
               </div>
             </div>
 
             <div className="border-t p-4">
               <button onClick={() => setIsModalOpen(false)} className="w-full py-2 bg-blue-500 text-white rounded-md">
-                Got it
+                Okee
               </button>
             </div>
           </div>
